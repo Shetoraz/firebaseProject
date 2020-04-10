@@ -10,11 +10,19 @@ import Foundation
 import Firebase
 
 class FirebaseDatabaseModel {
-    
-    var data = DatabaseReference()
+
+    enum Sections: String {
+        case Users = "users"
+    }
+
+    private var data: DatabaseReference
 
     init() {
-        self.data = self.data.database.reference()
+        self.data = Database.database().reference()
+    }
+
+    func write(section: Sections.RawValue, user: String, text: String) {
+        self.data.child(section).child(user).setValue(text)
     }
 }
 

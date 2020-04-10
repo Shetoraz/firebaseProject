@@ -154,8 +154,8 @@
 				A9796B28243F1541009A4113 /* Scenes */,
 				A9796B2C243F16A2009A4113 /* Model */,
 				A9796B29243F1576009A4113 /* Services */,
-				A9796B27243F1521009A4113 /* Extensions */,
 				A9796B2A243F166C009A4113 /* View */,
+				A9796B27243F1521009A4113 /* Extensions */,
 				A9796B2B243F167D009A4113 /* Supporting Files */,
 			);
 			path = firebaseProject;

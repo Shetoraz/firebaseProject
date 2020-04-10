@@ -9,19 +9,10 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
-    @IBAction func signUpPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signUpSegue", sender: self)
-    }
-
-    @IBAction func signInPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signInSegue", sender: self)
-    }
-    
 }
 
