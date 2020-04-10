@@ -24,5 +24,16 @@ class FirebaseDatabaseModel {
     func write(section: Sections.RawValue, user: String, text: String) {
         self.data.child(section).child(user).setValue(text)
     }
+
+    // MARK: - Beta 
+    func read(username: String) throws -> String? {
+        var value: String?
+        self.data.observe(.childAdded) { (snapshot) in
+            if let data = snapshot.value as? [String:String] {
+                value = data[username]
+            }
+        }
+        return value
+    }
 }
 
