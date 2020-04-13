@@ -19,8 +19,21 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signInPressed(_ sender: UIButton) {
-        FirebaseService.shared.signIn(with: emailField.text, password: passwordField.text)
+        FirebaseService.shared.signIn(with: emailField.text, password: passwordField.text) { result in
+            switch result {
+            case .success(_ ):
+                self.performSegue(withIdentifier: "loginDone", sender: self)
+                self.cleanFields()
+            case .failure(let error):
+                self.showAlert(title: "Sorry", message: error.localizedDescription)
+            }
+        }
     }
+
+    func cleanFields() {
+           self.emailField.text = ""
+           self.passwordField.text = ""
+       }
 }
 
 

@@ -15,15 +15,17 @@ class FirebaseService {
 
     private init() { }
 
-    func signIn(with email: String?, password: String?) {
+    let postReference = Database.database().reference().child("users")
+
+    func signIn(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
         if let email = email {
             if let password = password {
                 Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                    if let user = result?.user {
-                        print("User: \(user) connected successful")
+                    if let user = result?.user.email {
+                        completion(.success(user))
                     }
                     if let error = error {
-                        print(error.localizedDescription)
+                        completion(.failure(error))
                     }
                 }
             }

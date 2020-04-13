@@ -101,11 +101,41 @@
                     <connections>
                         <outlet property="emailField" destination="zFf-pg-5Eu" id="fSg-l2-ITV"/>
                         <outlet property="passwordField" destination="7ij-qi-qkd" id="cgA-hB-ZXe"/>
+                        <segue destination="Ne3-6y-4ID" kind="show" identifier="registerDone" id="m2g-my-2Bd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105.7971014492755" y="-206.25"/>
+            <point key="canvasLocation" x="1093" y="448"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="iQn-du-xRL">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxt-ky-0AM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController interfaceStyle="light" id="Ne3-6y-4ID" customClass="MainViewController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nhb-Ue-bWe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="08L-yO-0QF">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="08L-yO-0QF" id="NSo-hU-aNi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ne3-6y-4ID" id="bh5-Vz-41J"/>
+                            <outlet property="delegate" destination="Ne3-6y-4ID" id="xxp-Ns-T8q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="DEX-ZR-bez"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1857" y="104"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="AKi-xK-KU4">
@@ -144,11 +174,12 @@
                     <connections>
                         <outlet property="emailField" destination="ELh-xt-0LN" id="Ms2-Mo-s0l"/>
                         <outlet property="passwordField" destination="Imn-oo-P2R" id="St5-Y7-kPO"/>
+                        <segue destination="Ne3-6y-4ID" kind="show" identifier="loginDone" id="Aox-NN-qyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnE-fg-ohk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="457"/>
+            <point key="canvasLocation" x="1093" y="-207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5eG-Xx-UzR">
@@ -169,4 +200,7 @@
             <point key="canvasLocation" x="-384" y="104"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Aox-NN-qyX"/>
+    </inferredMetricsTieBreakers>
 </document>

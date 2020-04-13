@@ -23,12 +23,19 @@ class RegistrationViewController: UIViewController {
             switch $0 {
             case .success(let email):
                 self.showAlert(title: "Success", message: email) { (_ ) in
-                    self.navigationController?.popToRootViewController(animated: true) }
+                    self.performSegue(withIdentifier: "registerDone", sender: self)
+                    self.cleanFields()
+                }
             case .failure(let error):
                 self.showAlert(title: "Success", message: error.localizedDescription) { (_ ) in
-                    self.emailField.text = ""
-                    self.passwordField.text = "" }
+                    self.cleanFields()
+                }
             }
         }
+    }
+
+    func cleanFields() {
+        self.emailField.text = ""
+        self.passwordField.text = ""
     }
 }

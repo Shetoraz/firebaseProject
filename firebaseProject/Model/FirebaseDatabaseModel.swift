@@ -11,6 +11,8 @@ import Firebase
 
 class FirebaseDatabaseModel {
 
+    var posts = [Post]()
+
     enum Sections: String {
         case Users = "users"
     }
@@ -21,19 +23,8 @@ class FirebaseDatabaseModel {
         self.data = Database.database().reference()
     }
 
-    func write(section: Sections.RawValue, user: String, text: String) {
-        self.data.child(section).child(user).setValue(text)
-    }
-
-    // MARK: - Beta 
-    func read(username: String) throws -> String? {
-        var value: String?
-        self.data.observe(.childAdded) { (snapshot) in
-            if let data = snapshot.value as? [String:String] {
-                value = data[username]
-            }
-        }
-        return value
+    func write(section: Sections, user: String, text: String) {
+        self.data.child(section.rawValue).child(user).setValue(text)
     }
 }
 
