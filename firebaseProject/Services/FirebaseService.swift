@@ -15,7 +15,7 @@ class FirebaseService {
 
     private init() { }
 
-    let postReference = Database.database().reference().child("users")
+    let postReference = Database.database().reference().child("posts")
 
     func signIn(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
         if let email = email {

@@ -12,23 +12,19 @@ struct Post {
     var postId: String
     var username: String
     var text: String
-    var date: Date
+    var date: String
 
-    init?(postId: String, dict: [String:Any]) {
+    init?(postId: String, dict: [String:String]) {
         self.postId = postId
 
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-        guard let username = dict["username"] as? String,
-            let text = dict["message"] as? String,
-            let dateString = dict["date"] as? String,
-            let date = dateFormatter.date(from: dateString)
+        guard let username = dict["username"],
+            let text = dict["message"],
+            let dateString = dict["date"]
             else { return nil }
 
         self.username = username
         self.text = text
-        self.date = date
+        self.date = dateString
     }
 }
 

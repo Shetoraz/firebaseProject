@@ -11,6 +11,7 @@
 		A901C12124446493003853AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901C12024446493003853AC /* MainViewController.swift */; };
 		A906D899244336B9007FABB9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A906D898244336B9007FABB9 /* Post.swift */; };
 		A9796B26243F1457009A4113 /* Alert+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9796B25243F1457009A4113 /* Alert+UIViewController.swift */; };
+		A9BA697C2444EF9900467CEE /* PostSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BA697B2444EF9900467CEE /* PostSnapshot.swift */; };
 		A9DA4028243DFCE80082B31E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA4027243DFCE80082B31E /* AppDelegate.swift */; };
 		A9DA402C243DFCE80082B31E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA402B243DFCE80082B31E /* MenuViewController.swift */; };
 		A9DA402F243DFCE80082B31E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DA402D243DFCE80082B31E /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		A901C12024446493003853AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A906D898244336B9007FABB9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A9796B25243F1457009A4113 /* Alert+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+UIViewController.swift"; sourceTree = "<group>"; };
+		A9BA697B2444EF9900467CEE /* PostSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSnapshot.swift; sourceTree = "<group>"; };
 		A9DA4024243DFCE80082B31E /* firebaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9DA4027243DFCE80082B31E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9DA402B243DFCE80082B31E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A9DA4043243E55F00082B31E /* FirebaseDatabaseModel.swift */,
+				A9BA697B2444EF9900467CEE /* PostSnapshot.swift */,
 				A906D898244336B9007FABB9 /* Post.swift */,
 			);
 			path = Model;
@@ -297,6 +300,7 @@
 				A9DA403E243E45370082B31E /* RegistrationViewController.swift in Sources */,
 				A9DA4044243E55F00082B31E /* FirebaseDatabaseModel.swift in Sources */,
 				A901C12124446493003853AC /* MainViewController.swift in Sources */,
+				A9BA697C2444EF9900467CEE /* PostSnapshot.swift in Sources */,
 				A9DA402C243DFCE80082B31E /* MenuViewController.swift in Sources */,
 				A9DA4028243DFCE80082B31E /* AppDelegate.swift in Sources */,
 			);

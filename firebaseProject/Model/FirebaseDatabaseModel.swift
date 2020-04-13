@@ -14,7 +14,7 @@ class FirebaseDatabaseModel {
     var posts = [Post]()
 
     enum Sections: String {
-        case Users = "users"
+        case posts = "posts"
     }
 
     private var data: DatabaseReference
@@ -23,8 +23,18 @@ class FirebaseDatabaseModel {
         self.data = Database.database().reference()
     }
 
-    func write(section: Sections, user: String, text: String) {
-        self.data.child(section.rawValue).child(user).setValue(text)
+    func write(section: Sections, params: [String : String]) {
+        self.data.child(section.rawValue).childByAutoId().setValue(params)
+    }
+
+    func observePosts() {
+        self.data.child("posts").observe(.value) { (snapshot) in
+            FirebaseService.shared.postReference.observe(.value) { (snapshot) in
+                guard let postShapshot = PostSnapshot(with: snapshot) else { return }
+                self.posts = postShapshot.posts
+                self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        }
     }
 }
-
