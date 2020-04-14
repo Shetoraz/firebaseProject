@@ -21,13 +21,11 @@ class MainViewController: UITableViewController {
     private func setupTable() {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData(notification:)), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
-
         self.tableView.tableFooterView = UIView()
     }
 
     @IBAction func composePressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "New post", message: "What whould you like to post?", preferredStyle: .alert)
-
         alert.addTextField { (textField) in
             textField.placeholder = "Message"
         }
@@ -54,7 +52,6 @@ class MainViewController: UITableViewController {
     // MARK: - TableView's methods.
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // FIXME: - Create custom cell
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         let post = self.database.posts[indexPath.section]
         cell.setup(message: post.text, nickname: post.username, date: post.date)
@@ -81,7 +78,7 @@ class MainViewController: UITableViewController {
         if section == 0 {
             return 0
         }
-        return 20.0
+        return 10.0
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

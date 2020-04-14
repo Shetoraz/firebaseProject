@@ -11,11 +11,11 @@ import Firebase
 
 class FirebaseDatabaseModel {
 
-    var posts = [Post]()
-
     enum Sections: String {
         case posts = "posts"
     }
+
+    var posts = [Post]()
 
     private var data: DatabaseReference
 

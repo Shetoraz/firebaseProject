@@ -16,15 +16,19 @@ struct Post {
 
     init?(postId: String, dict: [String:String]) {
         self.postId = postId
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
 
         guard let username = dict["username"],
             let text = dict["message"],
-            let dateString = dict["date"]
+            let dateString = dict["date"],
+            let badDate = dateFormatter.date(from: dateString)
             else { return nil }
-
+        dateFormatter.dateFormat = "HH:mm/d MMM"
+        let niceDate = dateFormatter.string(from: badDate)
         self.username = username
         self.text = text
-        self.date = dateString
+        self.date = niceDate
     }
 }
 
