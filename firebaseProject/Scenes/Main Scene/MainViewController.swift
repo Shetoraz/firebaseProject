@@ -20,27 +20,28 @@ class MainViewController: UITableViewController {
 
     private func setupTable() {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData(notification:)), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
+
         self.tableView.tableFooterView = UIView()
     }
 
     @IBAction func composePressed(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "New post", message: "What would you like to post?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "New post", message: "What whould you like to post?", preferredStyle: .alert)
+
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter message here"
+            textField.placeholder = "Message"
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let post = UIAlertAction(title: "Post", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Post", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
-
-            let parameters = ["username" : "@sss",
+            //!!!
+            let parameters = ["username" : "@Antoha",
                               "message"  : text,
                               "date"     : dateString]
 
             self.database.write(section: .posts, params: parameters)
-        }
-        alert.addAction(cancel)
-        alert.addAction(post)
+        })
         present(alert, animated: true)
     }
 
@@ -54,9 +55,9 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // FIXME: - Create custom cell
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = self.database.posts[indexPath.section].username
-        cell.detailTextLabel?.text = self.database.posts[indexPath.section].text
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
+        let post = self.database.posts[indexPath.section]
+        cell.setup(message: post.text, nickname: post.username, date: post.date)
 
         return cell
     }
@@ -77,7 +78,14 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30.0
+        if section == 0 {
+            return 0
+        }
+        return 20.0
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130.0
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

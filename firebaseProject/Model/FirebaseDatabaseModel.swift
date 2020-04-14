@@ -32,7 +32,7 @@ class FirebaseDatabaseModel {
             FirebaseService.shared.postReference.observe(.value) { (snapshot) in
                 guard let postShapshot = PostSnapshot(with: snapshot) else { return }
                 self.posts = postShapshot.posts
-                self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+                self.posts.sort(by: { $0.date.compare($1.date) == .orderedAscending })
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
         }
