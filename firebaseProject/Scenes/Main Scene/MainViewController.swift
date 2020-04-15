@@ -34,7 +34,7 @@ class MainViewController: UITableViewController {
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
             //!!!
-            let parameters = ["username" : "@Antoha",
+            let parameters = ["username" : DefaultUsernameGenerator.shared.name,
                               "message"  : text,
                               "date"     : dateString]
 
@@ -91,6 +91,10 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController(title: "Actions", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Show \(self.database.posts[indexPath.section].username) profile", style: .default))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true)
     }
 }
 

@@ -16,7 +16,6 @@ class PostTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = .zero
         self.layer.shadowOpacity = 0.2
         self.layer.cornerRadius = 20
