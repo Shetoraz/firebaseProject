@@ -10,9 +10,11 @@
 		25F1D32BE61EEC78324C536D /* libPods-firebaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EBCE6EBEA3A92C2BB0C8B6 /* libPods-firebaseProject.a */; };
 		A901C12124446493003853AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901C12024446493003853AC /* MainViewController.swift */; };
 		A906D899244336B9007FABB9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A906D898244336B9007FABB9 /* Post.swift */; };
+		A9482BF5244B914D00019D68 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9482BF4244B914D00019D68 /* CustomTabBarController.swift */; };
 		A95912152445C8B40059AC82 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95912142445C8B40059AC82 /* MyProfile.swift */; };
 		A95BBD382445DBB10006AC00 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BBD362445DBB10006AC00 /* PostTableViewCell.swift */; };
 		A95BBD392445DBB10006AC00 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95BBD372445DBB10006AC00 /* PostTableViewCell.xib */; };
+		A9756B94244B75E2007AD521 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9756B93244B75E2007AD521 /* ProfileViewController.swift */; };
 		A9796B26243F1457009A4113 /* Alert+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9796B25243F1457009A4113 /* Alert+UIViewController.swift */; };
 		A9BA697C2444EF9900467CEE /* PostSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BA697B2444EF9900467CEE /* PostSnapshot.swift */; };
 		A9CBB9A224474BD100DF9299 /* DefaultUsernameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBB9A124474BD100DF9299 /* DefaultUsernameGenerator.swift */; };
@@ -33,9 +35,11 @@
 		91EBCE6EBEA3A92C2BB0C8B6 /* libPods-firebaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firebaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A901C12024446493003853AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A906D898244336B9007FABB9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A9482BF4244B914D00019D68 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		A95912142445C8B40059AC82 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		A95BBD362445DBB10006AC00 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A95BBD372445DBB10006AC00 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		A9756B93244B75E2007AD521 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9796B25243F1457009A4113 /* Alert+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+UIViewController.swift"; sourceTree = "<group>"; };
 		A9BA697B2444EF9900467CEE /* PostSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSnapshot.swift; sourceTree = "<group>"; };
 		A9CBB9A124474BD100DF9299 /* DefaultUsernameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUsernameGenerator.swift; sourceTree = "<group>"; };
@@ -76,6 +80,14 @@
 			path = "Main Scene";
 			sourceTree = "<group>";
 		};
+		A9756B95244B75EE007AD521 /* Profile Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A9756B93244B75E2007AD521 /* ProfileViewController.swift */,
+			);
+			path = "Profile Scene";
+			sourceTree = "<group>";
+		};
 		A9796B27243F1521009A4113 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 				A9796B2E243F16C7009A4113 /* Login Scene */,
 				A9796B2F243F16CF009A4113 /* Registration Scene */,
 				A901C1222444649B003853AC /* Main Scene */,
+				A9756B95244B75EE007AD521 /* Profile Scene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 			children = (
 				A9DA402D243DFCE80082B31E /* Main.storyboard */,
 				A9DA4032243DFCEA0082B31E /* LaunchScreen.storyboard */,
+				A9482BF4244B914D00019D68 /* CustomTabBarController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,8 +322,10 @@
 			files = (
 				A906D899244336B9007FABB9 /* Post.swift in Sources */,
 				A9DA4040243E45FE0082B31E /* LoginViewController.swift in Sources */,
+				A9482BF5244B914D00019D68 /* CustomTabBarController.swift in Sources */,
 				A9796B26243F1457009A4113 /* Alert+UIViewController.swift in Sources */,
 				A9DA4042243E51280082B31E /* FirebaseService.swift in Sources */,
+				A9756B94244B75E2007AD521 /* ProfileViewController.swift in Sources */,
 				A9DA403E243E45370082B31E /* RegistrationViewController.swift in Sources */,
 				A9DA4044243E55F00082B31E /* FirebaseDatabaseModel.swift in Sources */,
 				A95912152445C8B40059AC82 /* MyProfile.swift in Sources */,
