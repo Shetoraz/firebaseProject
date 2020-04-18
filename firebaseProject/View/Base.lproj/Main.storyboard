@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aci-DM-CpI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,7 +101,7 @@
                     <connections>
                         <outlet property="emailField" destination="zFf-pg-5Eu" id="fSg-l2-ITV"/>
                         <outlet property="passwordField" destination="7ij-qi-qkd" id="cgA-hB-ZXe"/>
-                        <segue destination="Ne3-6y-4ID" kind="show" identifier="registerDone" id="m2g-my-2Bd"/>
+                        <segue destination="Fk9-wB-Dny" kind="show" identifier="registerDone" id="m2g-my-2Bd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -131,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxt-ky-0AM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="104"/>
+            <point key="canvasLocation" x="3351" y="-208"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="AKi-xK-KU4">
@@ -170,7 +170,7 @@
                     <connections>
                         <outlet property="emailField" destination="ELh-xt-0LN" id="Ms2-Mo-s0l"/>
                         <outlet property="passwordField" destination="Imn-oo-P2R" id="St5-Y7-kPO"/>
-                        <segue destination="Ne3-6y-4ID" kind="show" identifier="loginDone" id="Aox-NN-qyX"/>
+                        <segue destination="Fk9-wB-Dny" kind="show" identifier="loginDone" id="Aox-NN-qyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnE-fg-ohk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,6 +194,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qe5-Gl-9fp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384" y="104"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DYg-f2-Xi7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Fk9-wB-Dny" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3P4-3a-aUL"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dUC-qi-Lvx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vW4-14-3c9" kind="relationship" relationship="viewControllers" id="6a1-uh-0Ec"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBu-9D-kVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.521739130435" y="103.79464285714285"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="x20-Nj-HLN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vW4-14-3c9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rft-d5-htJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45i-nS-tbT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ne3-6y-4ID" kind="relationship" relationship="rootViewController" id="WRP-vP-B7c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hp-wG-mP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2632" y="-208"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

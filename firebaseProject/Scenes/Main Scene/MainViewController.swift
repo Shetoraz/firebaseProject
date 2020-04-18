@@ -19,6 +19,7 @@ class MainViewController: UITableViewController {
     }
 
     private func setupTable() {
+        self.tabBarController?.navigationController?.isNavigationBarHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData(notification:)), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
         self.tableView.tableFooterView = UIView()
