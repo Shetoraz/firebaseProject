@@ -11,6 +11,8 @@ import Firebase
 
 class MyProfile {
 
+    private init() {}
+    
     static var username: String {
         get {
             return Auth.auth().currentUser?.displayName ?? ""
@@ -21,5 +23,21 @@ class MyProfile {
         get {
             return Auth.auth().currentUser?.email ?? ""
         }
+    }
+
+    static func logOut( completion: () ) {
+        do {
+            try Auth.auth().signOut()
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+    }
+
+    static func delete() {
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
     }
 }

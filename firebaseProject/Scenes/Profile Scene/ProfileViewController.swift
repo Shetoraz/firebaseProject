@@ -9,36 +9,37 @@
 import UIKit
 
 class ProfileViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = indexPath.row
         if indexPath.section == 0 {
             switch item {
             case 0:
-                print("Change nickname alert")
+                showEditAlert(type: .nickname)
             case 1:
-                print("Change Bio")
+                showEditAlert(type: .bio)
             case 2:
-                print("Change email")
+                showEditAlert(type: .email)
             default:
                 break
             }
-            self.tableView.deselectRow(at: indexPath, animated: true)
         }
         if indexPath.section == 1 {
             switch item {
             case 0:
-                print("Log out")
+                MyProfile.logOut(completion: print("Shit"))
+            case 1:
+                MyProfile.delete()
             default:
                 break
             }
         }
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
 

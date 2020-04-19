@@ -34,12 +34,11 @@ class MainViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Post", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
-            //!!!
             let parameters = ["username" : DefaultUsernameGenerator.shared.name,
                               "message"  : text,
                               "date"     : dateString]
 
-            self.database.write(section: .posts, params: parameters)
+            self.database.write(params: parameters)
         })
         present(alert, animated: true)
     }
@@ -85,7 +84,7 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }

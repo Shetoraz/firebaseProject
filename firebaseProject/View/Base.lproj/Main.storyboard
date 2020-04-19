@@ -10,7 +10,7 @@
         <!--Menu View Controller-->
         <scene sceneID="6kI-vM-K0Q">
             <objects>
-                <viewController id="VY7-Wa-AjJ" customClass="MenuViewController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="VY7-Wa-AjJ" customClass="MenuViewController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z7Q-Uj-OL7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="1856.521739130435" y="103.79464285714285"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="dvn-4w-bAr">
             <objects>
                 <tableViewController id="6yR-CJ-LeV" customClass="ProfileViewController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -340,6 +340,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="K0t-4y-EzD">
+                                        <rect key="frame" x="0.0" y="371.5" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0t-4y-EzD" id="p1x-Zs-SkN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-I3-h9S">
+                                                    <rect key="frame" x="141.5" y="13" width="131.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qiS-I3-h9S" firstAttribute="centerY" secondItem="p1x-Zs-SkN" secondAttribute="centerY" id="dGv-C2-KcS"/>
+                                                <constraint firstItem="qiS-I3-h9S" firstAttribute="centerX" secondItem="p1x-Zs-SkN" secondAttribute="centerX" id="ujV-Tw-3Er"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -348,18 +368,18 @@
                             <outlet property="delegate" destination="6yR-CJ-LeV" id="bfP-EP-x8u"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="iyf-Qf-Cvj"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="iyf-Qf-Cvj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIE-ML-vYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarItem title="" id="L23-cc-H5q"/>
             </objects>
             <point key="canvasLocation" x="2628.985507246377" y="447.99107142857139"/>
         </scene>
-        <!--Item-->
+        <!--Wall-->
         <scene sceneID="x20-Nj-HLN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vW4-14-3c9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="envelope" catalog="system" id="rft-d5-htJ"/>
+                    <tabBarItem key="tabBarItem" title="Wall" image="envelope" catalog="system" id="rft-d5-htJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45i-nS-tbT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -376,7 +396,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m2g-my-2Bd"/>
+        <segue reference="Aox-NN-qyX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="envelope" catalog="system" width="128" height="93"/>
