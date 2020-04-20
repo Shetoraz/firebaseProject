@@ -12,6 +12,17 @@ import Firebase
 class MyProfile {
 
     private init() {}
+
+    private static var array = ["0","1","2","2","3","4","5","6","7","8","9"]
+
+    static var defaultName: String = {
+        var readyString = String()
+        for _ in 1...8 {
+            let randomIndex = Int.random(in: 0...array.count-1)
+            readyString.append(array[randomIndex])
+        }
+        return "user\(readyString)"
+    }()
     
     static var username: String {
         get {

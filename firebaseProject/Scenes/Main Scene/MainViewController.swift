@@ -34,12 +34,14 @@ class MainViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Post", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
-            let parameters = ["username" : DefaultUsernameGenerator.shared.name,
-                              "message"  : text,
-                              "date"     : dateString]
-
-            self.database.write(params: parameters)
-        })
+            if !text.isEmpty && text.count <= 255 {
+                let parameters = ["username" : MyProfile.defaultName,
+                                  "message"  : text,
+                                  "date"     : dateString]
+                self.database.write(params: parameters)
+            } else {
+                self.showAlert(title: "Sorry", message: "The message have to be non empty and less than 255 characters")
+            }})
         present(alert, animated: true)
     }
 
