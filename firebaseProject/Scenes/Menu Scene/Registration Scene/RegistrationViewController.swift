@@ -10,15 +10,15 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    @IBAction func registerPressed(_ sender: UIButton) {
+    @IBAction private func registerPressed(_ sender: UIButton) {
         AuthService.signUp(with: emailField.text, password: passwordField.text) {
             switch $0 {
             case .success(let email):
@@ -38,7 +38,7 @@ class RegistrationViewController: UIViewController {
         }
     }
 
-    func cleanFields() {
+    private func cleanFields() {
         self.emailField.text = ""
         self.passwordField.text = ""
     }

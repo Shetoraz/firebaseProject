@@ -43,12 +43,12 @@ extension UIViewController {
                     self.showAlert(title: "Sorry", message: error.localizedDescription)
                 }
                 }
-            case .bio:
-                Auth.auth().sendPasswordReset(withEmail: MyProfile.email) { error in
-                    if let error = error {
-                        self.showAlert(title: "Sorry", message: error.localizedDescription)
-                    }
-                }
+            case .bio: print("asd")
+//                Auth.auth().sendPasswordReset(withEmail: User.email) { error in
+//                    if let error = error {
+//                        self.showAlert(title: "Sorry", message: error.localizedDescription)
+//                    }
+//                }
             }
         }))
         self.present(alert, animated: true)

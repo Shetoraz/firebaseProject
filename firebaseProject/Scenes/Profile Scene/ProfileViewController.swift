@@ -32,7 +32,7 @@ class ProfileViewController: UITableViewController {
         if indexPath.section == 1 {
             switch item {
             case 0:
-                MyProfile.logOut { (result) in
+                User.logOut { (result) in
                     switch result {
                     case .success(_ ):
                         print("Changed")
@@ -42,7 +42,7 @@ class ProfileViewController: UITableViewController {
                     }
                 }
             case 1:
-                MyProfile.delete()
+                User.delete()
             default:
                 break
             }

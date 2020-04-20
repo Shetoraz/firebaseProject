@@ -25,7 +25,7 @@ class MainViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
     }
 
-    @IBAction func composePressed(_ sender: UIBarButtonItem) {
+    @IBAction private func composePressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "New post", message: "What whould you like to post?", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Message"
@@ -35,7 +35,7 @@ class MainViewController: UITableViewController {
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
             if !text.isEmpty && text.count <= 255 {
-                let parameters = ["username" : MyProfile.defaultName,
+                let parameters = ["username" : User.username,
                                   "message"  : text,
                                   "date"     : dateString]
                 self.database.write(params: parameters)

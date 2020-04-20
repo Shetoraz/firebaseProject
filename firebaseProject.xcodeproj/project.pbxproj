@@ -11,7 +11,7 @@
 		A901C12124446493003853AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901C12024446493003853AC /* MainViewController.swift */; };
 		A906D899244336B9007FABB9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A906D898244336B9007FABB9 /* Post.swift */; };
 		A9482BF5244B914D00019D68 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9482BF4244B914D00019D68 /* CustomTabBarController.swift */; };
-		A95912152445C8B40059AC82 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95912142445C8B40059AC82 /* MyProfile.swift */; };
+		A95912152445C8B40059AC82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95912142445C8B40059AC82 /* User.swift */; };
 		A95BBD382445DBB10006AC00 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BBD362445DBB10006AC00 /* PostTableViewCell.swift */; };
 		A95BBD392445DBB10006AC00 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95BBD372445DBB10006AC00 /* PostTableViewCell.xib */; };
 		A9756B94244B75E2007AD521 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9756B93244B75E2007AD521 /* ProfileViewController.swift */; };
@@ -35,7 +35,7 @@
 		A901C12024446493003853AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A906D898244336B9007FABB9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A9482BF4244B914D00019D68 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		A95912142445C8B40059AC82 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+		A95912142445C8B40059AC82 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A95BBD362445DBB10006AC00 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A95BBD372445DBB10006AC00 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		A9756B93244B75E2007AD521 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				A9796B2D243F16BF009A4113 /* Menu Scene */,
-				A9796B2E243F16C7009A4113 /* Login Scene */,
-				A9796B2F243F16CF009A4113 /* Registration Scene */,
 				A901C1222444649B003853AC /* Main Scene */,
 				A9756B95244B75EE007AD521 /* Profile Scene */,
 			);
@@ -140,7 +138,7 @@
 				A9DA4043243E55F00082B31E /* FirebaseDatabaseModel.swift */,
 				A9BA697B2444EF9900467CEE /* PostSnapshot.swift */,
 				A906D898244336B9007FABB9 /* Post.swift */,
-				A95912142445C8B40059AC82 /* MyProfile.swift */,
+				A95912142445C8B40059AC82 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				A9DA402B243DFCE80082B31E /* MenuViewController.swift */,
+				A9796B2F243F16CF009A4113 /* Registration Scene */,
+				A9796B2E243F16C7009A4113 /* Login Scene */,
 			);
 			path = "Menu Scene";
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				A9756B94244B75E2007AD521 /* ProfileViewController.swift in Sources */,
 				A9DA403E243E45370082B31E /* RegistrationViewController.swift in Sources */,
 				A9DA4044243E55F00082B31E /* FirebaseDatabaseModel.swift in Sources */,
-				A95912152445C8B40059AC82 /* MyProfile.swift in Sources */,
+				A95912152445C8B40059AC82 /* User.swift in Sources */,
 				A901C12124446493003853AC /* MainViewController.swift in Sources */,
 				A9BA697C2444EF9900467CEE /* PostSnapshot.swift in Sources */,
 				A9DA402C243DFCE80082B31E /* MenuViewController.swift in Sources */,
