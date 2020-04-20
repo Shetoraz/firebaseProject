@@ -25,7 +25,7 @@
 		A9DA403C243DFF110082B31E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9DA403B243DFF110082B31E /* GoogleService-Info.plist */; };
 		A9DA403E243E45370082B31E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA403D243E45370082B31E /* RegistrationViewController.swift */; };
 		A9DA4040243E45FE0082B31E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA403F243E45FE0082B31E /* LoginViewController.swift */; };
-		A9DA4042243E51280082B31E /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA4041243E51280082B31E /* FirebaseService.swift */; };
+		A9DA4042243E51280082B31E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA4041243E51280082B31E /* AuthService.swift */; };
 		A9DA4044243E55F00082B31E /* FirebaseDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA4043243E55F00082B31E /* FirebaseDatabaseModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		A9DA403B243DFF110082B31E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9DA403D243E45370082B31E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9DA403F243E45FE0082B31E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A9DA4041243E51280082B31E /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		A9DA4041243E51280082B31E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A9DA4043243E55F00082B31E /* FirebaseDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseModel.swift; sourceTree = "<group>"; };
 		B2CDB58C42FEDBCA02B41034 /* Pods-firebaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseProject.release.xcconfig"; path = "Target Support Files/Pods-firebaseProject/Pods-firebaseProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				A9796B25243F1457009A4113 /* Alert+UIViewController.swift */,
-				A95912142445C8B40059AC82 /* MyProfile.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,7 +109,7 @@
 		A9796B29243F1576009A4113 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A9DA4041243E51280082B31E /* FirebaseService.swift */,
+				A9DA4041243E51280082B31E /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -141,6 +140,7 @@
 				A9DA4043243E55F00082B31E /* FirebaseDatabaseModel.swift */,
 				A9BA697B2444EF9900467CEE /* PostSnapshot.swift */,
 				A906D898244336B9007FABB9 /* Post.swift */,
+				A95912142445C8B40059AC82 /* MyProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				A9DA4040243E45FE0082B31E /* LoginViewController.swift in Sources */,
 				A9482BF5244B914D00019D68 /* CustomTabBarController.swift in Sources */,
 				A9796B26243F1457009A4113 /* Alert+UIViewController.swift in Sources */,
-				A9DA4042243E51280082B31E /* FirebaseService.swift in Sources */,
+				A9DA4042243E51280082B31E /* AuthService.swift in Sources */,
 				A9756B94244B75E2007AD521 /* ProfileViewController.swift in Sources */,
 				A9DA403E243E45370082B31E /* RegistrationViewController.swift in Sources */,
 				A9DA4044243E55F00082B31E /* FirebaseDatabaseModel.swift in Sources */,

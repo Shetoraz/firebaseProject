@@ -32,7 +32,15 @@ class ProfileViewController: UITableViewController {
         if indexPath.section == 1 {
             switch item {
             case 0:
-                MyProfile.logOut(completion: print("Shit"))
+                MyProfile.logOut { (result) in
+                    switch result {
+                    case .success(_ ):
+                        print("Changed")
+                        //move to menu vc
+                    case .failure(let error):
+                        self.showAlert(title: "Sorry", message: error.localizedDescription)
+                    }
+                }
             case 1:
                 MyProfile.delete()
             default:

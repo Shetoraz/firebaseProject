@@ -36,11 +36,12 @@ class MyProfile {
         }
     }
 
-    static func logOut( completion: () ) {
+    static func logOut(handler: @escaping (Result<Bool, Error>) -> Void) {
         do {
             try Auth.auth().signOut()
+            handler(.success(true))
         } catch(let error) {
-            print(error.localizedDescription)
+            handler(.failure(error))
         }
     }
 
@@ -51,4 +52,12 @@ class MyProfile {
             }
         })
     }
+
+//    static func rename(text: String, handler: @escaping (Result<Bool, Error>) -> Void) {
+//        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//        changeRequest?.displayName = text
+//        changeRequest?.commitChanges { (error) in
+//            handler(.failure(error))
+//        }
+//    }
 }

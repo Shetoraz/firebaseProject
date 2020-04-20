@@ -19,7 +19,7 @@ class RegistrationViewController: UIViewController {
     }
 
     @IBAction func registerPressed(_ sender: UIButton) {
-        FirebaseService.shared.signUp(with: emailField.text, password: passwordField.text) {
+        AuthService.signUp(with: emailField.text, password: passwordField.text) {
             switch $0 {
             case .success(let email):
                 self.showAlert(title: "Success", message: email) { (_ ) in

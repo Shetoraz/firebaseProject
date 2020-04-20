@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signInPressed(_ sender: UIButton) {
-        FirebaseService.shared.signIn(with: emailField.text, password: passwordField.text) { result in
+        AuthService.signIn(with: emailField.text, password: passwordField.text) { result in
             switch result {
             case .success(_ ):
                 self.performSegue(withIdentifier: "loginDone", sender: self)

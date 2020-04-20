@@ -25,7 +25,7 @@ class FirebaseDatabaseModel {
 
     func observePosts() {
         self.data.child("posts").observe(.value) { (snapshot) in
-            FirebaseService.shared.postReference.observe(.value) { (snapshot) in
+            AuthService.postReference.observe(.value) { (snapshot) in
                 guard let postShapshot = PostSnapshot(with: snapshot) else { return }
                 self.posts = postShapshot.posts
                 let dateFormatter = DateFormatter()

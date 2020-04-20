@@ -9,15 +9,22 @@
 import UIKit
 import Firebase
 
-class FirebaseService {
+class AuthService {
 
-    static var shared = FirebaseService()
+    static let postReference = Database.database().reference().child("posts")
+    var handle: AuthStateDidChangeListenerHandle?
 
-    private init() { }
+//    init() {
+//        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+//            if let user = user {
+//                self.user = User(uid: user.uid, email: user.email)
+//            } else {
+//                return nil
+//            }
+//        }
+//    }
 
-    let postReference = Database.database().reference().child("posts")
-
-    func signIn(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
+    static func signIn(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
         if let email = email {
             if let password = password {
                 Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -31,8 +38,8 @@ class FirebaseService {
             }
         }
     }
-
-    func signUp(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
+    
+    static func signUp(with email: String?, password: String?, completion: @escaping (Result<String, Error>) -> Void) {
         if let email = email {
             if let password = password {
                 Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
