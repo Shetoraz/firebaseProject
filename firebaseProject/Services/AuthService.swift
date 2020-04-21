@@ -53,4 +53,21 @@ class AuthService {
             }
         }
     }
+
+    static func logOut(handler: @escaping (Result<Bool, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            handler(.success(true))
+        } catch(let error) {
+            handler(.failure(error))
+        }
+    }
+
+    static func delete() {
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
+    }
 }

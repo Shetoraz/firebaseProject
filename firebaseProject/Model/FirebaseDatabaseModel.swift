@@ -23,6 +23,10 @@ class FirebaseDatabaseModel {
         self.data.child("posts").childByAutoId().setValue(params)
     }
 
+    func clearWall() {
+        posts.removeAll()
+    }
+
     func observePosts() {
         self.data.child("posts").observe(.value) { (snapshot) in
             AuthService.postReference.observe(.value) { (snapshot) in

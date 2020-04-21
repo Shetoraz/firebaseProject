@@ -39,16 +39,17 @@ extension UIViewController {
             case .nickname: let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
             changeRequest?.displayName = text
             changeRequest?.commitChanges { (error) in
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshCells"), object: nil)
                 if let error = error {
                     self.showAlert(title: "Sorry", message: error.localizedDescription)
                 }
                 }
             case .bio: print("asd")
-//                Auth.auth().sendPasswordReset(withEmail: User.email) { error in
-//                    if let error = error {
-//                        self.showAlert(title: "Sorry", message: error.localizedDescription)
-//                    }
-//                }
+                //                Auth.auth().sendPasswordReset(withEmail: User.email) { error in
+                //                    if let error = error {
+                //                        self.showAlert(title: "Sorry", message: error.localizedDescription)
+                //                    }
+                //                }
             }
         }))
         self.present(alert, animated: true)

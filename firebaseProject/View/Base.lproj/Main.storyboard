@@ -369,6 +369,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="iyf-Qf-Cvj"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="wov-PS-Gnv" id="ecr-Z0-OGD"/>
+                        <outlet property="emailLabel" destination="bxJ-rB-vPP" id="4sJ-Vo-ezd"/>
+                        <outlet property="nicknameLabel" destination="upy-QI-g9k" id="Icc-S3-R3O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIE-ML-vYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarItem title="" id="L23-cc-H5q"/>
@@ -379,7 +384,7 @@
         <scene sceneID="x20-Nj-HLN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vW4-14-3c9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wall" image="envelope" catalog="system" id="rft-d5-htJ"/>
+                    <tabBarItem key="tabBarItem" title="Wall" image="doc.plaintext" catalog="system" id="rft-d5-htJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45i-nS-tbT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -399,7 +404,7 @@
         <segue reference="Aox-NN-qyX"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>
