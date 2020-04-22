@@ -24,6 +24,10 @@ class LoginViewController: UIViewController {
             case .success(_ ):
                 self.performSegue(withIdentifier: "loginDone", sender: self)
                 self.cleanFields()
+                guard let navigationController = self.navigationController else { return }
+                var navigationArray = navigationController.viewControllers
+                navigationArray.remove(at: navigationArray.count - 2)
+                self.navigationController?.viewControllers = navigationArray
             case .failure(let error):
                 self.showAlert(title: "Sorry", message: error.localizedDescription)
             }
@@ -31,9 +35,9 @@ class LoginViewController: UIViewController {
     }
 
     func cleanFields() {
-           self.emailField.text = ""
-           self.passwordField.text = ""
-       }
+        self.emailField.text = ""
+        self.passwordField.text = ""
+    }
 }
 
 

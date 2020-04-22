@@ -10,39 +10,92 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    private var database = FirebaseDatabaseModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTable()
+        self.setupTable()
+        self.database.observePosts()
     }
 
-    func setupTable() {
+    private func setupTable() {
+        self.tabBarController?.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData(notification:)), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        self.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
         self.tableView.tableFooterView = UIView()
     }
 
+    @IBAction func composePressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New post", message: "What whould you like to post?", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Message"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Post", style: .default) { _ in
+            guard let text = alert.textFields?.first?.text else { return }
+            let dateString = String(describing: Date())
+            //!!!
+            let parameters = ["username" : DefaultUsernameGenerator.shared.name,
+                              "message"  : text,
+                              "date"     : dateString]
+
+            self.database.write(section: .posts, params: parameters)
+        })
+        present(alert, animated: true)
+    }
+
+    @objc private func reloadData(notification: Notification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
+    // MARK: - TableView's methods.
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
+        let post = self.database.posts[indexPath.section]
+        cell.setup(message: post.text, nickname: post.username, date: post.date)
+
+        return cell
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.database.posts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-            let label = UILabel()
-            label.frame = CGRect.init(x: 15, y: 15, width: headerView.frame.width-10, height: headerView.frame.height-10)
-            label.text = "Wall"
-            label.font = UIFont.boldSystemFont(ofSize: 50.0)
-            headerView.addSubview(label)
+        let view = UIView()
+        view.backgroundColor = .clear
 
-            return headerView
-        }
-        return nil
+        return view
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60.0
+        if section == 0 {
+            return 0
+        }
+        return 10.0
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController(title: "Actions", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Show \(self.database.posts[indexPath.section].username) profile", style: .default))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true)
     }
 }
 

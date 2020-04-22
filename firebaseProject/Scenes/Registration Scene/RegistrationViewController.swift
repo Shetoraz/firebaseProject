@@ -25,6 +25,10 @@ class RegistrationViewController: UIViewController {
                 self.showAlert(title: "Success", message: email) { (_ ) in
                     self.performSegue(withIdentifier: "registerDone", sender: self)
                     self.cleanFields()
+                    guard let navigationController = self.navigationController else { return }
+                    var navigationArray = navigationController.viewControllers
+                    navigationArray.remove(at: navigationArray.count - 2)
+                    self.navigationController?.viewControllers = navigationArray
                 }
             case .failure(let error):
                 self.showAlert(title: "Success", message: error.localizedDescription) { (_ ) in
