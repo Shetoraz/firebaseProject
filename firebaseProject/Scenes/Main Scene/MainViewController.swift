@@ -25,7 +25,7 @@ class MainViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
     }
 
-    @IBAction func composePressed(_ sender: UIBarButtonItem) {
+    @IBAction private func composePressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "New post", message: "What whould you like to post?", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Message"
@@ -34,13 +34,14 @@ class MainViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Post", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else { return }
             let dateString = String(describing: Date())
-            //!!!
-            let parameters = ["username" : DefaultUsernameGenerator.shared.name,
-                              "message"  : text,
-                              "date"     : dateString]
-
-            self.database.write(section: .posts, params: parameters)
-        })
+            if !text.isEmpty && text.count <= 255 {
+                let parameters = ["username" : User.username,
+                                  "message"  : text,
+                                  "date"     : dateString]
+                self.database.write(params: parameters)
+            } else {
+                self.showAlert(title: "Sorry", message: "The message have to be non empty and less than 255 characters")
+            }})
         present(alert, animated: true)
     }
 
@@ -85,7 +86,7 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }

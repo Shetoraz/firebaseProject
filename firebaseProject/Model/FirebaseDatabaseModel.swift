@@ -11,10 +11,6 @@ import Firebase
 
 class FirebaseDatabaseModel {
 
-    enum Sections: String {
-        case posts = "posts"
-    }
-
     var posts = [Post]()
 
     private var data: DatabaseReference
@@ -23,16 +19,22 @@ class FirebaseDatabaseModel {
         self.data = Database.database().reference()
     }
 
-    func write(section: Sections, params: [String : String]) {
-        self.data.child(section.rawValue).childByAutoId().setValue(params)
+    func write(params: [String : String]) {
+        self.data.child("posts").childByAutoId().setValue(params)
+    }
+
+    func clearWall() {
+        posts.removeAll()
     }
 
     func observePosts() {
         self.data.child("posts").observe(.value) { (snapshot) in
-            FirebaseService.shared.postReference.observe(.value) { (snapshot) in
+            AuthService.postReference.observe(.value) { (snapshot) in
                 guard let postShapshot = PostSnapshot(with: snapshot) else { return }
                 self.posts = postShapshot.posts
-                self.posts.sort(by: { $0.date.compare($1.date) == .orderedAscending })
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH:mm/d MMM"
+                self.posts.sort(by: { dateFormatter.date(from:$0.date)?.compare(dateFormatter.date(from:$1.date)!) == .orderedAscending })
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
         }

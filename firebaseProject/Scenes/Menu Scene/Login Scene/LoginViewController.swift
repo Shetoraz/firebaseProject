@@ -10,16 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    @IBAction func signInPressed(_ sender: UIButton) {
-        FirebaseService.shared.signIn(with: emailField.text, password: passwordField.text) { result in
+    @IBAction private func signInPressed(_ sender: UIButton) {
+        AuthService.signIn(with: emailField.text, password: passwordField.text) { result in
             switch result {
             case .success(_ ):
                 self.performSegue(withIdentifier: "loginDone", sender: self)
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         }
     }
 
-    func cleanFields() {
+    private func cleanFields() {
         self.emailField.text = ""
         self.passwordField.text = ""
     }

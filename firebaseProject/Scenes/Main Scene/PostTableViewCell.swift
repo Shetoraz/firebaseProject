@@ -10,9 +10,9 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     // FIXME: - Add avatar
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
+    @IBOutlet private weak var nicknameLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
