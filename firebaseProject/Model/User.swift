@@ -20,7 +20,7 @@ class User {
     private static var defaultName : String = {
         var array = ["0","1","2","2","3","4","5","6","7","8","9"]
         var name = String()
-        for i in 1...8 {
+        for i in 1...7 {
             name += array.randomElement()!
         }
         return "user" + name

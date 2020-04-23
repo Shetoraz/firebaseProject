@@ -13,13 +13,13 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var nicknameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 0.2
-        self.layer.cornerRadius = 20
-        self.layer.shadowRadius = 5
+        self.messageLabel.layer.masksToBounds = true
+        self.messageLabel.layer.cornerRadius = 8
+        self.messageLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        self.messageLabel.backgroundColor = UIColor(red: 129/255, green: 212/255, blue: 250/244, alpha: 1)
     }
     
     func setup(message: String, nickname: String, date: String) {
