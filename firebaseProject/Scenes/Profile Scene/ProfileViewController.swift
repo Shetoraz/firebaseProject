@@ -20,7 +20,7 @@ class ProfileViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
     }
 
-     @objc private func refreshCells(notification: Notification) {
+    @objc private func refreshCells(notification: Notification) {
         DispatchQueue.main.async {
             self.nicknameLabel.text = User.username
             self.bioLabel.text = User.username
@@ -30,7 +30,6 @@ class ProfileViewController: UITableViewController {
 
     private func addObserve() {
         self.nicknameLabel.text = User.username
-        self.bioLabel.text = User.username
         self.emailLabel.text = User.email
         NotificationCenter.default.addObserver(self, selector: #selector(refreshCells(notification:)), name: NSNotification.Name(rawValue: "refreshCells"), object: nil)
     }
@@ -40,9 +39,9 @@ class ProfileViewController: UITableViewController {
         if indexPath.section == 0 {
             switch item {
             case 0:
-                showEditAlert(type: .nickname)
+                print("Change avatar")
             case 1:
-                showEditAlert(type: .bio)
+                showEditAlert(type: .nickname)
             case 2:
                 showEditAlert(type: .email)
             default:

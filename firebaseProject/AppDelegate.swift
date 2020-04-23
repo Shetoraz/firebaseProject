@@ -17,8 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         _ = AuthService()
+        if let _ = Auth.auth().currentUser {
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Main") as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
-
 }
 
