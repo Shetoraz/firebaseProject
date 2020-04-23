@@ -19,7 +19,6 @@ extension UIViewController {
     enum EditType: String {
         case email = "E-mail"
         case nickname = "Nickname"
-        case bio = "Bio"
     }
     
     func showEditAlert(type: EditType, completion: ((UIAlertAction) -> Void)? = nil) {
@@ -42,16 +41,7 @@ extension UIViewController {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshCells"), object: nil)
                 if let error = error {
                     self.showAlert(title: "Sorry", message: error.localizedDescription)
-                }
-                }
-            case .bio: print("asd")
-                //                Auth.auth().sendPasswordReset(withEmail: User.email) { error in
-                //                    if let error = error {
-                //                        self.showAlert(title: "Sorry", message: error.localizedDescription)
-                //                    }
-                //                }
-            }
-        }))
+                }}}}))
         self.present(alert, animated: true)
     }
 }

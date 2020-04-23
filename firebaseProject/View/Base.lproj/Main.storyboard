@@ -198,7 +198,7 @@
         <!--My Tab Bar Controller-->
         <scene sceneID="DYg-f2-Xi7">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Fk9-wB-Dny" customClass="MyTabBarController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="Fk9-wB-Dny" customClass="MyTabBarController" customModule="firebaseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3P4-3a-aUL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dUC-qi-Lvx">
@@ -277,38 +277,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Ecw-nk-Lql">
-                                        <rect key="frame" x="0.0" y="235.5" width="414" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ecw-nk-Lql" id="UVp-Qu-BUP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wov-PS-Gnv">
-                                                    <rect key="frame" x="20" y="13" width="374" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-gh-IAK">
-                                                    <rect key="frame" x="20" y="36" width="374" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="wov-PS-Gnv" firstAttribute="leading" secondItem="UVp-Qu-BUP" secondAttribute="leadingMargin" id="1RH-m5-EWB"/>
-                                                <constraint firstItem="aD6-gh-IAK" firstAttribute="leading" secondItem="UVp-Qu-BUP" secondAttribute="leadingMargin" id="Jx9-oy-ntJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aD6-gh-IAK" secondAttribute="trailing" id="bEw-2T-kRP"/>
-                                                <constraint firstItem="aD6-gh-IAK" firstAttribute="centerY" secondItem="UVp-Qu-BUP" secondAttribute="centerY" constant="10" id="fAa-2s-Yym"/>
-                                                <constraint firstItem="wov-PS-Gnv" firstAttribute="centerY" secondItem="UVp-Qu-BUP" secondAttribute="centerY" constant="-10" id="hDM-3v-5tg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wov-PS-Gnv" secondAttribute="trailing" id="wnf-w3-ij4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Lmu-Jl-58V">
-                                        <rect key="frame" x="0.0" y="305.5" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="235.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lmu-Jl-58V" id="478-b3-QgP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -342,7 +312,7 @@
                             <tableViewSection headerTitle="App" id="wGK-N0-52H">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="oNp-AK-y7o">
-                                        <rect key="frame" x="0.0" y="431.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oNp-AK-y7o" id="bpE-4H-djr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -362,7 +332,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="K0t-4y-EzD">
-                                        <rect key="frame" x="0.0" y="481.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="411.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0t-4y-EzD" id="p1x-Zs-SkN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -391,7 +361,6 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="iyf-Qf-Cvj"/>
                     <connections>
-                        <outlet property="bioLabel" destination="wov-PS-Gnv" id="ecr-Z0-OGD"/>
                         <outlet property="emailLabel" destination="bxJ-rB-vPP" id="4sJ-Vo-ezd"/>
                         <outlet property="nicknameLabel" destination="upy-QI-g9k" id="Icc-S3-R3O"/>
                     </connections>
