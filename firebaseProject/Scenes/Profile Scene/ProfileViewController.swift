@@ -11,7 +11,6 @@ import UIKit
 class ProfileViewController: UITableViewController {
 
     @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
 
     override func viewDidLoad() {
@@ -23,7 +22,6 @@ class ProfileViewController: UITableViewController {
     @objc private func refreshCells(notification: Notification) {
         DispatchQueue.main.async {
             self.nicknameLabel.text = User.username
-            self.bioLabel.text = User.username
             self.emailLabel.text = User.email
         }
     }
